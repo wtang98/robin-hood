@@ -1,0 +1,17 @@
+.app{
+	&__body{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 600px;
+		&-container{
+			height: 100%;
+			width: 800px;
+			display: flex;
+			padding: 0 48px;
+		}
+	}
+}
+body{
+	background-color: black;
+}

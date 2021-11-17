@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+}
+
+.newsfeed{
+    // background-color: limegreen;
+    flex: 0.7;
+    color: white;
+    border: 1px solid red;
+    &__container{
+        &-charts{
+            &-portfolioValue{
+                text-align: left;
+                &>h1{
+                    margin: 0;
+                }
+                &>p{
+                    margin-top: 0;
+                }
+            }
+            &-chart{
+            }
+        }
+    }
+}
