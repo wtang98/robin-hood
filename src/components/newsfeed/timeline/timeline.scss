@@ -1,0 +1,22 @@
+
+.timeline{
+    display: flex;
+    border-bottom: 1px solid #3b4754;
+    &__buttons{
+        display: flex;
+        align-items: center;
+
+        &-button{
+            font-weight: bold;
+            padding: 10px 10px 20px 10px;
+            cursor: pointer;
+            &:hover{
+                color: #5ac53b;
+            }
+            &.active{
+                color: #5ac53b;
+                border-bottom: 1px solid #5ac53b;
+            }
+        }
+    }
+}
