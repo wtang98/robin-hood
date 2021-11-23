@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './newsfeed.scss'
 import Linegraph from './linegraph/linegraph'
 import Timeline from './timeline/timeline'
 import Chip from './chip/chip'
-import { Avatar } from '@material-ui/core'
+
+const TOKEN = "c6ah4nqad3id24fn22ig"
+const BASE_URL = "https://finnhub.io/api/v1/quote";
 
 const Newsfeed = () => {
+    const [portValue, setPortValue] = useState([])
     
     const popularTopics = [
         "Technology",
@@ -19,6 +22,12 @@ const Newsfeed = () => {
         "China",
         "Pharma",
     ]
+
+    const isMarketOpen = () => {
+        const time = new Date();
+        console.log(time.getHours())
+    }
+    isMarketOpen()
 
     return (
         <div className="newsfeed">

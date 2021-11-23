@@ -23,11 +23,14 @@
         text-align: right;
         font-size: 12px;
         font-weight: 500;
-        &-price{
+        &-priceP{
             padding-bottom: 4px;
         }
-        &-percentage{
+        &-percentageP{
             color: #5ac35b;
+        }
+        &-percentageD{
+            color: red;
         }
     }
     &:hover{

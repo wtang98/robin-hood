@@ -2,18 +2,18 @@ import React, {useEffect, useState} from 'react'
 import './linegraph.scss'
 import { Line } from "react-chartjs-2";
 
-const Linegraph = () => {
+const Linegraph = (props) => {
+    const {myStocks} =props
     const [xData, setXData] = useState([]);
     const [yData, setyData] = useState([]);
-
 
     const data = {
         labels: xData,
         datasets: [
             {
-                label: '$',
+                label: '',
                 data: yData,
-                fill: false,
+                fill: true,
                 backgroundColor: "black",
                 borderColor:"#5ac53b",
                 borderWidth:2,
@@ -27,36 +27,6 @@ const Linegraph = () => {
         ],
     }
 
-    // const options = {
-    //     plugins: {
-    //         legend: {
-    //             display: false
-    //         }
-    //     },
-    //     // legend: {
-    //     //     display:false
-    //     // },
-    //     tooltips: {
-    //         mode: "index",
-    //         intersect: false
-    //     },
-    //     scales: {
-    //         x : [{
-    //             display: false,
-    //             type: "time",
-    //             scaleFontSize: 0,
-    //             time: {
-    //                 format: "MM/DD/YY",
-    //                 tooltipFormat: "ll",
-    //             }
-    //         }],
-    //         y : [{
-    //             ticks: {
-    //                 display:false
-    //             }
-    //         }]
-    //     }
-    // }
 
     const createMockData = () => {
         let data = [];
@@ -80,6 +50,7 @@ const Linegraph = () => {
         setXData(xAxis)
         setyData(yAxis)
     }
+
     useEffect(()=> {createMockData()},[])
     return (
         <div className="linegraph">
@@ -88,7 +59,7 @@ const Linegraph = () => {
                 options = {{
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: true // Hide legend
+                        legend: false // Hide legend
                     },
                     scales: {
                         y: {

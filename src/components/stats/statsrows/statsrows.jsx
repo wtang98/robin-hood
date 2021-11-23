@@ -35,7 +35,6 @@ const Statsrows = (props) => {
         })
     }
 
-
     return (
         <div className="row" onClick={fakeBuyStock}>
             <div className="row__intro">
@@ -48,7 +47,7 @@ const Statsrows = (props) => {
             </div>
             <div className="row__numbers">
                 <p className="row__numbers-price">{Number(props.price).toFixed(2)}</p>
-                <p className="row__numbers-percentage">{Number(percentageChange).toFixed(2) > 0 ? "+"+Number(percentageChange).toFixed(2) : Number(percentageChange).toFixed(2)}%</p>
+                <p className={percentageChange<0 ?"row__numbers-percentageD": "row__numbers-percentageP"}>{Number(percentageChange).toFixed(2) > 0 ? "+$"+Number(percentageChange).toFixed(2) : "-$"+Number(percentageChange).toFixed(2)*-1}%</p>
             </div>
         </div>
     )
